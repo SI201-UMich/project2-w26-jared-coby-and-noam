@@ -83,11 +83,73 @@ def get_listing_details(listing_id) -> dict:
     # ==============================
     # YOUR CODE STARTS HERE
     # ==============================
-    pass
+    file_path = "html_files/listing_" + listing_id + ".html"
+
+    with open(file_path, 'r', encoding="utf-8-sig") as f:
+        soup = BeautifulSoup(f.read(), 'html.parser')
+        
+        policy_number = ""
+        lis = soup.find_all('li', class_="f19phm7j")
+        for li in lis:
+            if "Policy" in li.get_text():
+                span = li.find('span', class_='ll4r2nl')
+                policy_number = span.text.strip()
+            if "pending" in policy_number.lower():
+                policy_number = "Pending"
+            elif "exempt" in policy_number.lower():
+                policy_number = "Exempt"
+
+        host_type = "regular"
+        spans = soup.find_all('span', class_='l1dfad8f')
+        for span in spans:
+            if "Superhost" in span.text:
+                host_type = "Superhost"
+                break
+
+        host_name = ""
+        h2_tags = soup.find_all('h2')
+        for h2 in h2_tags:
+            if "Hosted by" in h2.get_text():
+                host_name = h2.get_text().replace("Hosted by", "").strip()
+                break
+
+        subtitle = ""
+        h2s = soup.find_all('h2', class_='_14i3z6h')
+        for h2 in h2s:
+            if "hosted by" in h2.get_text().lower():
+                subtitle = h2.get_text()
+                break
+        if not subtitle:
+            fallback_div = soup.find('div', class_='_kh3xmo')
+            if fallback_div:
+                subtitle = fallback_div.get_text()
+        if "Private" in subtitle:
+            room_type = "Private Room"
+        elif "Shared" in subtitle:
+            room_type = "Shared Room"
+        else:
+            room_type = "Entire Room"
+
+        location_rating = 0.0
+        location_div = soup.find('div', class_='_y1ba89', string='Location')
+        if location_div:
+            rating_div = location_div.find_next_sibling('div', class_='_bgq2leu')
+            if rating_div:
+                location_rating = float(rating_div.text.strip())
+
+        return {
+            listing_id: {
+                "policy_number": policy_number,
+                "host_type": host_type,
+                "host_name": host_name,
+                "room_type": room_type,
+                "location_rating": location_rating
+            }
+        }
+
     # ==============================
     # YOUR CODE ENDS HERE
     # ==============================
-
 
 def create_listing_database(html_path) -> list[tuple]:
     """
@@ -216,12 +278,7 @@ class TestCases(unittest.TestCase):
         html_list = ["467507", "1550913", "1944564", "4614763", "6092596"]
 
         # TODO: Call get_listing_details() on each listing id above and save results in a list.
-
-        # TODO: Spot-check a few known values by opening the corresponding listing_<id>.html files.
-        # 1) Check that listing 467507 has the correct policy number "STR-0005349".
-        # 2) Check that listing 1944564 has the correct host type "Superhost" and room type "Entire Room".
-        # 3) Check that listing 1944564 has the correct location rating 4.9.
-        pass
+        
 
     def test_create_listing_database(self):
         # TODO: Check that each tuple in detailed_data has exactly 7 elements:
