@@ -1,0 +1,25 @@
+1. I do not think this current system provides adequate accountability around short-term rentals in San Francisco. 
+When I was working through the project, one listing had an invalid policy number and another simply said "pending."
+This surprised me because it feels like the system was letting these issues slip through rather than catching them. 
+I also think this system puts too much burden on everyday people. These people likely do not know how to scrape Airbnb listings and file complaints.
+Therefore, they are unable to help the issue.
+One update to this system should be that Airbnb validates policy numbers before a listing goes live instead of letting hosts type it in.
+This way, invalid numbers will not pass through.
+Additionally, the city should proactively audit listings instead of waiting for complaints.
+This will decrease frustration among city residents because they will not have to go through the burden of filing a complaint.
+
+2. One factor I believe is important to consider when discussing the legality of web scraping is the purpose of the scraping.
+Certain purposes may intend to serve the greater good, and therefore, should not be illegal. 
+The EFF article highlights that researchers in Sandvig v. Barr wanted to scrape data to uncover possible racial discrimination in online algorithms.
+This purpose is beneficial to society because it is trying to create a sense of equality rather than marginalize people. 
+Additionally, this purpose is similar to the purpose of this project. We scraped to check legal compliance, something that benefits the greater good.
+
+3. Guideline 1: If the users consented to their data being shared in the Terms and Conditions, then it is ethical.
+Tying this into my research project in SI 310 this semester, most social media users ignore the Terms and Conditions and simply accept them without understanding the full scope to their data use.
+If, however, they accepted these Terms and Conditions, then they technically accepted to some type of data use.
+Furthermore, targeted ads, although annoying, do not have any malicious intent.
+Guideline 2: What is the purpose of the scraping?
+In the case of Clearview AI, the photos they scraped were used to build a facial recognition database that was sold to law enforcement.
+Something like this is used for the greater good to catch criminals.
+It does, however, become unethical, in my opinion, if it is used to track civilians movements throughout an area for no purpose.
+This is an invasion of privacy, yet if it is used to find people who have broken the law, then it is protecting society.
