@@ -253,11 +253,22 @@ def google_scholar_searcher(query):
     # ==============================
     # YOUR CODE STARTS HERE
     # ==============================
-    pass
+    url = "https://scholar.google.com/scholar?q=" + query
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    response = requests.get(url, headers=headers)
+
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    titles = []
+    results = soup.find_all('h3', class_='gs_rt')
+    for result in results:
+        titles.append(result.get_text())
+
+    return titles
     # ==============================
     # YOUR CODE ENDS HERE
     # ==============================
-
+print(google_scholar_searcher("airbnb"))
 
 class TestCases(unittest.TestCase):
     def setUp(self):
