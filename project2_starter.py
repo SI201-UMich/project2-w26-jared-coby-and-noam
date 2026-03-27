@@ -346,7 +346,7 @@ def test_create_listing_database(self):
 
     self.assertEqual(
         self.detailed_data[-1],
-        # TODO: pot-check the LAST tuple is ("Guest suite in Mission District", "467507", "STR-0005349", "Superhost", "Jennifer", "Entire Room", 4.8).
+        # TODO: Spot-check the LAST tuple is ("Guest suite in Mission District", "467507", "STR-0005349", "Superhost", "Jennifer", "Entire Room", 4.8).
 
     def test_output_csv(self):
         out_path = os.path.join(self.base_dir, "test.csv")
