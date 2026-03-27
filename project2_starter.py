@@ -166,8 +166,29 @@ def create_listing_database(html_path) -> list[tuple]:
     # ==============================
     # YOUR CODE STARTS HERE
     # ==============================
-    pass
-    # ==============================
+    listing_titles = get_listing_titles(html_path)
+    listing_ids = get_listing_ids(html_path)
+    policy_numbers = get_policy_numbers(html_path)
+    host_types = get_host_types(html_path)
+    host_names = get_host_names(html_path)
+    room_types = get_room_types(html_path)
+    location_ratings = get_location_ratings(html_path)
+
+    database = []
+
+    for i in range(len(listing_titles)):
+        listing_tuple = (
+            listing_titles[i],
+            listing_ids[i],
+            policy_numbers[i],
+            host_types[i],
+            host_names[i],
+            room_types[i],
+            location_ratings[i]
+        )
+        database.append(listing_tuple)
+
+    return database    # ==============================
     # YOUR CODE ENDS HERE
     # ==============================
 
@@ -189,8 +210,23 @@ def output_csv(data, filename) -> None:
     # ==============================
     # YOUR CODE STARTS HERE
     # ==============================
-    pass
-    # ==============================
+  sorted_data = sorted(data, key=lambda x: x[6], reverse=True)
+
+    with open(filename, "w", newline="", encoding="utf-8") as file:
+        writer = csv.writer(file)
+
+        writer.writerow([
+            "Listing Title",
+            "Listing ID",
+            "Policy Number",
+            "Host Type",
+            "Host Name",
+            "Room Type",
+            "Location Rating"
+        ])
+
+        for row in sorted_data:
+            writer.writerow(row)    # ==============================
     # YOUR CODE ENDS HERE
     # ==============================
 
@@ -304,16 +340,25 @@ class TestCases(unittest.TestCase):
         self.assertEqual(result_1944564["1944564"]["location_rating"], 4.9)
         pass
 
-    def test_create_listing_database(self):
-        # TODO: Check that each tuple in detailed_data has exactly 7 elements:
-        # (listing_title, listing_id, policy_number, host_type, host_name, room_type, location_rating)
+def test_create_listing_database(self):
+    for item in self.detailed_data:
+        self.assertEqual(len(item), 7)
 
+    self.assertEqual(
+        self.detailed_data[-1],
         # TODO: Spot-check the LAST tuple is ("Guest suite in Mission District", "467507", "STR-0005349", "Superhost", "Jennifer", "Entire Room", 4.8).
-        pass
 
     def test_output_csv(self):
         out_path = os.path.join(self.base_dir, "test.csv")
+   rows = []
+    with open(out_path, "r", encoding="utf-8") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            rows.append(row)
 
+    self.assertEqual(
+        rows[1],
+        ["Guesthouse in San Francisco", "49591060", "STR-0000253", "Superhost", "Ingrid", "Entire Room", "5.0"]
         # TODO: Call output_csv() to write the detailed_data to a CSV file.
         # TODO: Read the CSV back in and store rows in a list.
         # TODO: Check that the first data row matches ["Guesthouse in San Francisco", "49591060", "STR-0000253", "Superhost", "Ingrid", "Entire Room", "5.0"].
