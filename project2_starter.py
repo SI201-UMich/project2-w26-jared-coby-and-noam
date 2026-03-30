@@ -400,6 +400,7 @@ class TestCases(unittest.TestCase):
 
     def test_output_csv(self):
         out_path = os.path.join(self.base_dir, "test.csv")
+        output_csv(self.detailed_data, out_path)
         rows = []
         with open(out_path, "r", encoding="utf-8") as file:
             reader = csv.reader(file)
