@@ -1,0 +1,26 @@
+SI 201 - Project 2 Reflection
+Elliot Bolour
+
+---
+
+Question 1: Do you think this current system provides adequate accountability around short-term rentals in San Francisco?
+
+I don't think the current system provides adequate accountability. The fact that the government only investigates listings after receiving a complaint puts the burden entirely on citizens rather than proactive enforcement. A more effective system would require Airbnb itself to verify and display valid policy numbers before a listing goes live, rather than leaving it to independent investigators to flag violations after the fact.
+
+---
+
+Question 2: Describe at least one factor you believe is important to consider when discussing the legality of web scraping.
+
+One factor I think is important when discussing the legality of web scraping is whether the data being collected is genuinely public. There's a meaningful difference between scraping a page anyone can visit versus scraping data behind a login or paywall. The Computer Fraud and Abuse Act becomes murky here because "unauthorized access" isn't clearly defined, and courts have ruled differently depending on the case.
+
+---
+
+Question 3: Develop at least two guidelines you think are important to consider when deciding whether to do web scraping.
+
+I think the first guideline should be to consider the potential for harm before collecting. Clearview AI scraped billions of public photos and built a facial recognition tool that's been misused by law enforcement globally, and none of those people consented to being in a surveillance database. A second guideline is to ask whether the scraping respects the spirit of why the data was made public. Airbnb listings are public so potential guests can find housing but not so that companies can harvest personal data at scale. When your use diverges from that original intent, scraping should not be allowed.
+
+---
+
+Elliot Bolour
+University of Michigan | Class of 2029
+310-889-8658 | ebolour@umich.edu
