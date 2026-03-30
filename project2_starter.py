@@ -1,11 +1,14 @@
 # SI 201 HW4 (Library Checkout System)
 # Your name: Jared Weingarten, Noam Altman, Elliot Bolour
-# Your student id: 71252257
-# Your email: jfwein@umich.edu
+# Your student id: 71252257, 88196639, 
+# Your email: jfwein@umich.edu, noamalt@umich.edu, ebolour@umich.edu
 # Who or what you worked with on this homework (including generative AI like ChatGPT): Claude
 # If you worked with generative AI also add a statement for how you used it.
 # e.g.:
-# Asked ChatGPT for hints on debugging and for suggestions on overall code structure
+# Asked Claude for hints on debugging and for suggestions on overall code structure.
+# Asked Claude how to use find_nexst_sibling
+# Asked Claude for hints to write test cases
+# Asked Claude to help find the class codes
 #
 # Did your use of GenAI on this assignment align with your goals and guidelines in your Gen AI contract? If not, why?
 #
@@ -149,22 +152,6 @@ def get_listing_details(listing_id) -> dict:
 
     # ==============================
     # YOUR CODE ENDS HERE
-    # ==============================
-
-def create_listing_database(html_path) -> list[tuple]:
-    """
-    Use prior functions to gather all necessary information and create a database of listings.
-
-    Args:
-        html_path (str): The path to the HTML file containing the search results
-
-    Returns:
-        list[tuple]: A list of tuples. Each tuple contains:
-        (listing_title, listing_id, policy_number, host_type, host_name, room_type, location_rating)
-    """
-    # TODO: Implement checkout logic following the instructions
-    # ==============================
-    # YOUR CODE STARTS HERE
     # ==============================
 
 def create_listing_database(html_path) -> list[tuple]:
