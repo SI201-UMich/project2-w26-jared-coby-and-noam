@@ -166,29 +166,43 @@ def create_listing_database(html_path) -> list[tuple]:
     # ==============================
     # YOUR CODE STARTS HERE
     # ==============================
-    listing_titles = get_listing_titles(html_path)
-    listing_ids = get_listing_ids(html_path)
-    policy_numbers = get_policy_numbers(html_path)
-    host_types = get_host_types(html_path)
-    host_names = get_host_names(html_path)
-    room_types = get_room_types(html_path)
-    location_ratings = get_location_ratings(html_path)
+def create_listing_database(html_path) -> list[tuple]:
+    """
+    Use prior functions to gather all necessary information and create a database of listings.
 
+    Args:
+        html_path (str): The path to the HTML file containing the search results
+
+    Returns:
+        list[tuple]: A list of tuples. Each tuple contains:
+        (listing_title, listing_id, policy_number, host_type, host_name, room_type, location_rating)
+    """
+    # TODO: Implement checkout logic following the instructions
+    # ==============================
+    # YOUR CODE STARTS HERE
+    # ==============================
+    listing_results = load_listing_results(html_path)
     database = []
 
-    for i in range(len(listing_titles)):
+    for listing_title, listing_id in listing_results:
+        details = get_listing_details(listing_id)
+        info = details[listing_id]
+
         listing_tuple = (
-            listing_titles[i],
-            listing_ids[i],
-            policy_numbers[i],
-            host_types[i],
-            host_names[i],
-            room_types[i],
-            location_ratings[i]
+            listing_title,
+            listing_id,
+            info["policy_number"],
+            info["host_type"],
+            info["host_name"],
+            info["room_type"],
+            info["location_rating"]
         )
+
         database.append(listing_tuple)
 
-    return database    # ==============================
+    return database
+
+    # ==============================
     # YOUR CODE ENDS HERE
     # ==============================
 
@@ -210,7 +224,7 @@ def output_csv(data, filename) -> None:
     # ==============================
     # YOUR CODE STARTS HERE
     # ==============================
-  sorted_data = sorted(data, key=lambda x: x[6], reverse=True)
+    sorted_data = sorted(data, key=lambda x: x[6], reverse=True)
 
     with open(filename, "w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
@@ -340,40 +354,39 @@ class TestCases(unittest.TestCase):
         self.assertEqual(result_1944564["1944564"]["location_rating"], 4.9)
         pass
 
-def test_create_listing_database(self):
-    for item in self.detailed_data:
-        self.assertEqual(len(item), 7)
+    def test_create_listing_database(self):
+        for item in self.detailed_data:
+            self.assertEqual(len(item), 7)
 
-    self.assertEqual(
-        self.detailed_data[-1],
-        # TODO: pot-check the LAST tuple is ("Guest suite in Mission District", "467507", "STR-0005349", "Superhost", "Jennifer", "Entire Room", 4.8).
+        self.assertEqual(
+            self.detailed_data[-1],
+            ("Guest suite in Mission District", "467507", "STR-0005349", "Superhost", "Jennifer", "Entire Room", 4.8)
+        )
 
     def test_output_csv(self):
         out_path = os.path.join(self.base_dir, "test.csv")
-   rows = []
-    with open(out_path, "r", encoding="utf-8") as file:
-        reader = csv.reader(file)
-        for row in reader:
-            rows.append(row)
+        rows = []
+        with open(out_path, "r", encoding="utf-8") as file:
+            reader = csv.reader(file)
+            for row in reader:
+                rows.append(row)
 
-    self.assertEqual(
-        rows[1],
-        ["Guesthouse in San Francisco", "49591060", "STR-0000253", "Superhost", "Ingrid", "Entire Room", "5.0"]
-        # TODO: Call output_csv() to write the detailed_data to a CSV file.
-        # TODO: Read the CSV back in and store rows in a list.
-        # TODO: Check that the first data row matches ["Guesthouse in San Francisco", "49591060", "STR-0000253", "Superhost", "Ingrid", "Entire Room", "5.0"].
+        self.assertEqual(rows[1], ["Guesthouse in San Francisco", "49591060", "STR-0000253", "Superhost", "Ingrid", "Entire Room", "5.0"])
+            # TODO: Call output_csv() to write the detailed_data to a CSV file.
+            # TODO: Read the CSV back in and store rows in a list.
+            # TODO: Check that the first data row matches ["Guesthouse in San Francisco", "49591060", "STR-0000253", "Superhost", "Ingrid", "Entire Room", "5.0"].
 
         os.remove(out_path)
 
     def test_avg_location_rating_by_room_type(self):
         # TODO: Call avg_location_rating_by_room_type() and save the output.
         # TODO: Check that the average for "Private Room" is 4.9.
-        pass
+            pass
 
     def test_validate_policy_numbers(self):
         # TODO: Call validate_policy_numbers() on detailed_data and save the result into a variable invalid_listings.
         # TODO: Check that the list contains exactly "16204265" for this dataset.
-        pass
+            pass
 
 
 def main():
