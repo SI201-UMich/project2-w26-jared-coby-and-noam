@@ -1,0 +1,59 @@
+1) Do you think this current system provides adequate accountability around short-term
+rentals in San Francisco? In your response, describe why you believe the system is
+adequate or inadequate. If you believe the system is inadequate, discuss a possible
+change in actions required to improve accountability in this system. You may refer to the
+SWE Code of Ethics as you think through your response.
+
+I don’t think the current system provides adequate accountability for short-term rentals in San Francisco. It relies too much on hosts to report honestly, Airbnb to display accurate information, and outside investigators to catch violations after they happen. That makes the system reactive instead of preventative. A host can enter an incorrect policy number, and the city may not step in unless someone files a complaint. In my view, that leaves too much room for noncompliance. 
+A better system could be if we require Airbnb to verify registration numbers directly with the city before a listing goes live. Instead of simply displaying what a host enters, the platform should confirm that the number is valid, which makes it much better for the user. That would shift more responsibility onto the platform, which is in the best position to stop invalid listings before they appear. 
+
+
+
+2) As discussed in the introduction, the legality of web scraping is still uncertain in the US.
+Skim through the Legal Issues section of Web Scraping in the US on Wikipedia and this
+article about the legal issues with the Computer Fraud and Abuse Act, and describe at
+least one factor you believe is important to consider when discussing the legality of web
+scraping and why.
+
+One important factor in the legality of web scraping is whether the data is publicly accessible or whether the scraper bypassed restrictions to get it. That distinction matters because courts have treated those situations differently. If data is available on the open web, the legal argument against scraping is often weaker than if someone ignored a cease-and-desist letter, bypassed technical blocks, or accessed content that was not meant to be public. So to me, the main question is not just whether scraping occurred, but how the data was accessed.
+
+
+3) Scraping public data does not always lead to positive results for society. For example,
+look to Facebook–Cambridge Analytica data scandal - Wikipedia or Clearview AI -
+Wikipedia. Many argue that using someone’s personal data without their consent (even if
+publicly provided) is unethical. Web scraping requires thoughtful intervention. Develop at
+least two guidelines you think are important to consider when deciding whether to do
+web scraping.
+
+First, web scraping should only be done when there is a clear public-interest purpose and when the data collected is limited to what is actually necessary. In this project, the goal was to evaluate compliance with rental laws, which is much easier to justify than scraping large amounts of personal data for profit or surveillance. For me, scraping is more ethical when it is narrowly focused on research, oversight, or accountability, and less ethical when it is broad, invasive, or exploitative.
+
+Second, people should minimize harm by avoiding unnecessary personal information, being transparent about how data will be used, and respecting legal and technical boundaries. Just because information is public does not mean it is ethical to collect and repurpose it in any way. 
+
+1) Do you think this current system provides adequate accountability around short-term
+rentals in San Francisco? In your response, describe why you believe the system is
+adequate or inadequate. If you believe the system is inadequate, discuss a possible
+change in actions required to improve accountability in this system. You may refer to the
+SWE Code of Ethics as you think through your response.
+
+I don’t think the current system provides adequate accountability for short-term rentals in San Francisco. It relies too much on hosts to report honestly, Airbnb to display accurate information, and outside investigators to catch violations after they happen. That makes the system reactive instead of preventative. A host can enter an incorrect policy number, and the city may not step in unless someone files a complaint. In my view, that leaves too much room for noncompliance. 
+A better system could be if we require Airbnb to verify registration numbers directly with the city before a listing goes live. Instead of simply displaying what a host enters, the platform should confirm that the number is valid, which makes it much better for the user. That would shift more responsibility onto the platform, which is in the best position to stop invalid listings before they appear. 
+
+
+
+2) As discussed in the introduction, the legality of web scraping is still uncertain in the US.
+Skim through the Legal Issues section of Web Scraping in the US on Wikipedia and this
+article about the legal issues with the Computer Fraud and Abuse Act, and describe at
+least one factor you believe is important to consider when discussing the legality of web
+scraping and why.
+
+One important factor in the legality of web scraping is whether the data is publicly accessible or whether the scraper bypassed restrictions to get it. That distinction matters because courts have treated those situations differently. If data is available on the open web, the legal argument against scraping is often weaker than if someone ignored a cease-and-desist letter, bypassed technical blocks, or accessed content that was not meant to be public. So to me, the main question is not just whether scraping occurred, but how the data was accessed.
+
+
+3) Scraping public data does not always lead to positive results for society. For example,
+look to Facebook–Cambridge Analytica data scandal - Wikipedia or Clearview AI -
+Wikipedia. Many argue that using someone’s personal data without their consent (even if
+publicly provided) is unethical. Web scraping requires thoughtful intervention. Develop at
+least two guidelines you think are important to consider when deciding whether to do
+web scraping.
+
+First, web scraping should only be done when there is a clear public-interest purpose and when the data collected is limited to what is actually necessary. In this project, the goal was to evaluate compliance with rental laws, which is much easier to justify than scraping large amounts of personal data for profit or surveillance. For me, scraping is more ethical when it is narrowly focused on research, oversight, or accountability, and less ethical when it is broad, invasive, or exploitative. Next, people should focus on trying to not have worries about how data will be used, and rather respect technical boundaries. 
