@@ -166,6 +166,7 @@ def create_listing_database(html_path) -> list[tuple]:
     # ==============================
     # YOUR CODE STARTS HERE
     # ==============================
+
 def create_listing_database(html_path) -> list[tuple]:
     """
     Use prior functions to gather all necessary information and create a database of listings.
@@ -262,7 +263,28 @@ def avg_location_rating_by_room_type(data) -> dict:
     # ==============================
     # YOUR CODE STARTS HERE
     # ==============================
-    pass
+    ratings_by_room = {}
+    counts_by_room = {}
+
+    for listing in data:
+        room_type = listing[5]
+        location_rating = listing[6]
+
+        if location_rating == 0.0:
+            continue
+
+        if room_type not in ratings_by_room:
+            ratings_by_room[room_type] = location_rating
+            counts_by_room[room_type] = 1
+        else:
+            ratings_by_room[room_type] += location_rating
+            counts_by_room[room_type] += 1
+
+    averages = {}
+    for room_type in ratings_by_room:
+        averages[room_type] = round(ratings_by_room[room_type] / counts_by_room[room_type], 1)
+
+    return averages
     # ==============================
     # YOUR CODE ENDS HERE
     # ==============================
